@@ -1,5 +1,5 @@
-const Register = () => {
+const AuthRegister = () => {
   return <div>register</div>;
 };
 
-export default Register;
+export default AuthRegister;
