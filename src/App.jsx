@@ -6,12 +6,17 @@ import AdminLayout from "./components/admin/layout";
 import AdminDashboard from "./pages/admin/dashboard";
 import AdminOrders from "./pages/admin/orders";
 import AdminProducts from "./pages/admin/products";
+import AdminFeatures from "./pages/admin/features";
+import ShopLayout from "./components/shop/layout";
+import ShopHome from "./pages/shop/home";
+import ShopAccount from "./pages/shop/account";
+import ShopListing from "./pages/shop/listing";
+import ShopCheckout from "./pages/shop/checkout";
+import Error from "./pages/error";
 
 const App = () => {
   return (
     <div>
-      <h2>App</h2>
-
       <Routes>
         {/* authentication */}
         <Route path="/auth" element={<AuthLayout />}>
@@ -24,7 +29,19 @@ const App = () => {
           <Route path="dashboard" element={<AdminDashboard />} />
           <Route path="orders" element={<AdminOrders />} />
           <Route path="products" element={<AdminProducts />} />
+          <Route path="features" element={<AdminFeatures />} />
         </Route>
+
+        {/* shop */}
+        <Route path="/shop" element={<ShopLayout />}>
+          <Route path="home" element={<ShopHome />} />
+          <Route path="account" element={<ShopAccount />} />
+          <Route path="listing" element={<ShopListing />} />
+          <Route path="checkout" element={<ShopCheckout />} />
+        </Route>
+
+        {/* not found */}
+        <Route path="*" element={<Error />} />
       </Routes>
     </div>
   );
