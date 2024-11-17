@@ -13,6 +13,7 @@ import ShopAccount from "./pages/shop/account";
 import ShopListing from "./pages/shop/listing";
 import ShopCheckout from "./pages/shop/checkout";
 import Error from "./pages/error";
+import NoAccess from "./pages/no-access";
 
 const App = () => {
   return (
@@ -42,6 +43,9 @@ const App = () => {
 
         {/* not found */}
         <Route path="*" element={<Error />} />
+
+        {/* no access */}
+        <Route path="/no-access" element={<NoAccess />} />
       </Routes>
     </div>
   );
